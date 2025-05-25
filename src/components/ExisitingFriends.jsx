@@ -1,14 +1,16 @@
-import { useState } from "react";
+
 import Friends from "./Friends"
 import NewFriendForm from "./NewFriendForm";
 
 
 
 
-function ExisitingFriends({friends,addNewFriend , onSelect}) {
+function ExisitingFriends({friends,addNewFriend , onSelect ,onCloseBill ,selectedFriend,handleClose,isOpenForm,setIsOpenForm}) {
 
     
-    const[isOpenForm,setIsOpenForm]=useState(false) ;
+    
+    
+
 
     function handleOpenForem()
     {
@@ -19,7 +21,7 @@ function ExisitingFriends({friends,addNewFriend , onSelect}) {
 
     return (
         <div className="sidebar">
-            <Friends friends={friends} onSelect={onSelect} />
+            <Friends onCloseBill={onCloseBill} selectedFriend={selectedFriend} handleClose={handleClose} friends={friends} onSelect={onSelect} />
             <NewFriendForm onAddfriend={addNewFriend} isOpen={isOpenForm} setIsOpenForm={setIsOpenForm}/>
             <button onClick={handleOpenForem} className="button">{isOpenForm?'Close':'Add friend'}</button>
         </div>
