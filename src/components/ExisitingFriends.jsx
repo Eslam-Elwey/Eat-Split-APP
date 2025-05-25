@@ -20,7 +20,7 @@ function ExisitingFriends({friends,addNewFriend , onSelect}) {
     return (
         <div className="sidebar">
             <Friends friends={friends} onSelect={onSelect} />
-            <NewFriendForm onAddfriend={addNewFriend} isOpen={isOpenForm}/>
+            <NewFriendForm onAddfriend={addNewFriend} isOpen={isOpenForm} setIsOpenForm={setIsOpenForm}/>
             <button onClick={handleOpenForem} className="button">{isOpenForm?'Close':'Add friend'}</button>
         </div>
     )

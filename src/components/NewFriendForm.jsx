@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
-function NewFriendForm({isOpen , onAddfriend}) {
+function NewFriendForm({isOpen , onAddfriend , setIsOpenForm}) {
 
     const[name,setname]=useState("") ;
     const[randomIndex,setRandomIndex] = useState(Math.floor(Math.random()*10000));
@@ -29,6 +29,8 @@ function NewFriendForm({isOpen , onAddfriend}) {
         setname(()=>"");
         
         onAddfriend(data) ;
+
+        setIsOpenForm(()=>false);
 
     }
 
