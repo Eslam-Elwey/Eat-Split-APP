@@ -1,16 +1,24 @@
 
 
-function FriendData({friend,onSelect}) {
+
+function FriendData({friend,onSelect, handleClose,selectedFriend,onCloseBill}) {
 
     const {id,name,image,balance} = friend ;
 
     function handleSelect()
     {
         onSelect(id);
+        handleClose(id) ;
+    }
+
+    function handleCloseButton()
+    {
+        onCloseBill(()=>false);
+        handleClose(null) ;
     }
 
     return (
-        <li>
+        <li className={selectedFriend?.id===id?"selected":""}>
             <img src={image} alt={name} />
             <div>
                 <h3>{name}</h3>
@@ -18,7 +26,7 @@ function FriendData({friend,onSelect}) {
                     {balance===0?`You and ${name} are even`:balance>0?`${name} owes you ${balance}€`:`You owe ${name} ${balance*-1}€`}
                     </p>
             </div>
-            <button onClick={handleSelect} className="button">Select</button>
+            <button onClick={selectedFriend?.id===id?handleCloseButton:handleSelect} className="button">{selectedFriend?.id===id?'Close':'Select'}</button>
         </li>
     )
 }
