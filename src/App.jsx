@@ -73,11 +73,15 @@ function App() {
   }
 
   return (
+    <>
+    <div style={{color:"white" , fontSize:"3rem" , width:"60%",margin : "10px auto",backgroundColor:"gray" ,borderRadius:"12px"}}>
+      <h1 style={{width:"80%",padding:"10px" , margin:"auto"}}>Eat & Split APP</h1>
+      </div>
     <div className='app'>
       <ExisitingFriends isOpenForm={isOpenForm} setIsOpenForm={setIsOpenForm}  handleClose={handleClose} selectedFriend={selectedFriend} onCloseBill={setIsOpenBill} friends ={friends} addNewFriend={addNewFriend} onSelect={handleSelectChoice}/>
       <BillForm onSplitBill2={handleSplitValue} setIsOpenForm={setIsOpenForm} handleClose={handleClose} onSplitBill={handleBillValue} friendData={matchedFriend} isOpenBill={isOpenBill} setIsOpenBill={setIsOpenBill}/>
-      
     </div>
+    </>
   )
 }
 
