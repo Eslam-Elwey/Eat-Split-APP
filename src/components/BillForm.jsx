@@ -58,8 +58,8 @@ function BillForm({isOpenBill , setIsOpenBill ,friendData , onSplitBill,handleCl
     return (
         <>
         
-        <form onSubmit={handleSubmit} className="form-split-bill">
-            <span onClick={handleCloseX} style={{fontSize:"4rem" , position :"absolute" , right:"30rem" , top:"12rem" , cursor:"pointer"}} >&times;</span>
+        <form onSubmit={handleSubmit} className="form-split-bill" style={{position:"relative"}}>
+            <span onClick={handleCloseX} style={{fontSize:"4rem" , position :"absolute" , right:"4rem" , top:"2rem" , cursor:"pointer"}} >&times;</span>
             <h2>split a bill with {friendData.name}</h2>
 
             <label htmlFor="name">💰 Bill Value</label>
