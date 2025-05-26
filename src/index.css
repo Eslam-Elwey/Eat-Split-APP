@@ -23,6 +23,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url("../public/food.jpg");
+  background-size: cover;
+  background-attachment: fixed ;
 }
 
 .app {
@@ -47,6 +50,17 @@ body {
 
 .button:hover {
   background-color: var(--color-dark);
+}
+
+.sidebar
+{
+  background-color: rgb(236, 212, 222);
+  padding: 15px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
 }
 
 .sidebar ul {
