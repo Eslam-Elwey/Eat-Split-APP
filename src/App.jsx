@@ -79,7 +79,7 @@ function App() {
       </div>
     <div className='app'>
       <ExisitingFriends isOpenForm={isOpenForm} setIsOpenForm={setIsOpenForm}  handleClose={handleClose} selectedFriend={selectedFriend} onCloseBill={setIsOpenBill} friends ={friends} addNewFriend={addNewFriend} onSelect={handleSelectChoice}/>
-      <BillForm onSplitBill2={handleSplitValue} setIsOpenForm={setIsOpenForm} handleClose={handleClose} onSplitBill={handleBillValue} friendData={matchedFriend} isOpenBill={isOpenBill} setIsOpenBill={setIsOpenBill}/>
+      {selectedFriend&&<BillForm key ={selectedFriend.id} onSplitBill2={handleSplitValue} setIsOpenForm={setIsOpenForm} handleClose={handleClose} onSplitBill={handleBillValue} friendData={matchedFriend} isOpenBill={isOpenBill} setIsOpenBill={setIsOpenBill}/>}
     </div>
     </>
   )
